@@ -5,6 +5,7 @@
     <title>ZONA MATES - Próximamente</title>
 
     <style>
+        /* ===== ESTILOS GENERALES ===== */
         body {
             margin: 0;
             background-color: #000;
@@ -24,6 +25,7 @@
             align-items: center;
             justify-content: center;
             gap: 18px;
+            flex-wrap: wrap; /* Permite que se adapte en móvil */
         }
 
         .logo {
@@ -43,9 +45,9 @@
             letter-spacing: 1px;
         }
 
-        /* INTRO PREMIUM */
+        /* ===== INTRO ===== */
         .intro {
-            padding: 100px 20px;
+            padding: 80px 20px;
             background-color: #0d0d0d;
             display: flex;
             justify-content: center;
@@ -75,8 +77,9 @@
             font-family: Georgia, serif;
         }
 
+        /* ===== CATÁLOGO ===== */
         .catalogo {
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
 
         .catalogo h2 {
@@ -84,13 +87,20 @@
             letter-spacing: 2px;
         }
 
+        .productos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
         .producto {
             background: white;
             color: black;
             display: inline-block;
             width: 220px;
-            margin: 20px;
-            padding: 25px;
+            margin: 0;
+            padding: 20px;
             border-radius: 12px;
             border: 1px solid #9c7945;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -113,12 +123,44 @@
             letter-spacing: 1px;
         }
 
+        /* ===== FOOTER ===== */
         footer {
             background-color: #9c7945;
             color: black;
             padding: 25px;
             margin-top: 60px;
             font-size: 14px;
+        }
+
+        /* ===== MEDIA QUERIES PARA CELULAR ===== */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+                letter-spacing: 2px;
+            }
+
+            .subtitulo {
+                font-size: 14px;
+            }
+
+            .intro h2 {
+                font-size: 22px;
+            }
+
+            .intro p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .producto {
+                width: 90%; /* Ajusta ancho al móvil */
+                padding: 15px;
+            }
+
+            .header-contenido {
+                flex-direction: column;
+                gap: 12px;
+            }
         }
     </style>
 </head>
@@ -139,8 +181,7 @@
         <div class="linea"></div>
         <p>
             Bienvenidos a este emprendimiento propio que inicié en el año 2023.
-
-ZonaMates nació de una pasión simple pero profunda: el ritual del mate.
+            ZonaMates nació de una pasión simple pero profunda: el ritual del mate.
             Para mí, el mate no es solo una bebida, es una forma de compartir,
             de conectar con otros o de encontrarse con uno mismo.
             Es ese compañero fiel que está en cada momento.
@@ -153,30 +194,31 @@ ZonaMates nació de una pasión simple pero profunda: el ritual del mate.
 <section class="catalogo">
     <h2>Catálogo — Próximamente</h2>
 
-    <div class="producto">
-        <img src="https://via.placeholder.com/200">
-        <h3>Mates</h3>
-        <p class="proximamente">Próximamente</p>
-    </div>
+    <div class="productos-container">
+        <div class="producto">
+            <img src="https://via.placeholder.com/200">
+            <h3>Mate de Madera</h3>
+            <p class="proximamente">Próximamente</p>
+        </div>
 
-    <div class="producto">
-        <img src="https://via.placeholder.com/200">
-        <h3>Bombilla Acero Inoxidable</h3>
-        <p class="proximamente">Próximamente</p>
-    </div>
+        <div class="producto">
+            <img src="https://via.placeholder.com/200">
+            <h3>Bombilla Acero Inoxidable</h3>
+            <p class="proximamente">Próximamente</p>
+        </div>
 
-    <div class="producto">
-        <img src="https://via.placeholder.com/200">
-        <h3>Combos Disponibles</h3>
-        <p class="proximamente">Próximamente</p>
-    </div>
+        <div class="producto">
+            <img src="https://via.placeholder.com/200">
+            <h3>Matera Premium</h3>
+            <p class="proximamente">Próximamente</p>
+        </div>
 
-    <div class="producto">
-        <img src="https://via.placeholder.com/200">
-        <h3>Yerbera y Azucarera</h3>
-        <p class="proximamente">Próximamente</p>
+        <div class="producto">
+            <img src="https://via.placeholder.com/200">
+            <h3>Yerbera y Azucarera</h3>
+            <p class="proximamente">Próximamente</p>
+        </div>
     </div>
-
 </section>
 
 <footer>
