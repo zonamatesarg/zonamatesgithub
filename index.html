@@ -9,15 +9,10 @@
     /* ===== ESTILOS GENERALES ===== */
     body {
         margin: 0;
+        background-color: #000;
         color: white;
         font-family: "Copperplate Gothic Bold", Copperplate, serif;
         scroll-behavior: smooth;
-
-        /* Fondo con imagen de mate */
-        background-image: url('https://images.unsplash.com/photo-1617682832253-5e3e59e0f7c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWF0ZXxlbnwwfHx8fDE2NzgyNzY2NTc&ixlib=rb-4.0.3&q=80&w=1080');
-        background-size: cover;       /* ocupa toda la pantalla */
-        background-position: center;  /* centrado */
-        background-attachment: fixed; /* efecto parallax ligero */
     }
 
     a {
@@ -27,11 +22,10 @@
 
     /* ===== HEADER ===== */
     header {
-        background-color: rgba(156, 121, 69, 0.9); /* semitransparente para ver el fondo */
+        background-color: #9c7945;
         padding: 40px 20px;
         color: black;
         text-align: center;
-        backdrop-filter: blur(5px); /* efecto difuminado */
     }
 
     .header-contenido {
@@ -61,15 +55,13 @@
     /* ===== INTRO ===== */
     .intro {
         padding: 60px 20px;
+        background-color: #0d0d0d;
         display: flex;
         justify-content: center;
     }
 
     .intro-contenido {
         max-width: 600px;
-        background-color: rgba(0,0,0,0.6); /* caja semitransparente para texto */
-        padding: 20px;
-        border-radius: 12px;
     }
 
     .intro h2 {
@@ -101,8 +93,6 @@
     .catalogo h2 {
         margin-bottom: 30px;
         letter-spacing: 2px;
-        color: #fff;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     }
 
     .productos-container {
@@ -113,7 +103,7 @@
     }
 
     .producto {
-        background: rgba(255,255,255,0.95);
+        background: white;
         color: black;
         border-radius: 15px;
         border: 1px solid #9c7945;
@@ -149,12 +139,11 @@
 
     /* ===== FOOTER ===== */
     footer {
-        background-color: rgba(156, 121, 69, 0.9);
+        background-color: #9c7945;
         color: black;
         padding: 25px 15px;
         text-align: center;
         font-size: 14px;
-        backdrop-filter: blur(5px);
     }
 
     /* ===== BOTÓN WHATSAPP ===== */
@@ -200,10 +189,6 @@
 
         .intro h2 {
             font-size: 20px;
-        }
-
-        .intro-contenido {
-            padding: 15px;
         }
 
         .intro p {
