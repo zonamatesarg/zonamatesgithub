@@ -159,6 +159,59 @@
         letter-spacing: 1px;
     }
 
+    /* ===== FORMULARIO DE SUSCRIPCIÓN ===== */
+    .suscripcion {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #0d0d0d;
+        color: white;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .suscripcion h2 {
+        font-size: 24px;
+        color: #9c7945;
+        margin-bottom: 15px;
+        letter-spacing: 2px;
+    }
+
+    .suscripcion form {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .suscripcion input[type="email"] {
+        padding: 12px 15px;
+        border-radius: 25px;
+        border: 1px solid #9c7945;
+        outline: none;
+        font-size: 16px;
+        width: 250px;
+        transition: 0.3s;
+    }
+
+    .suscripcion input[type="email"]:focus {
+        border-color: #ffd699;
+    }
+
+    .suscripcion button {
+        padding: 12px 25px;
+        border-radius: 25px;
+        border: none;
+        background-color: #9c7945;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .suscripcion button:hover {
+        background-color: #ffd699;
+    }
+
     /* ===== FOOTER ===== */
     footer {
         background-color: #9c7945;
@@ -230,6 +283,10 @@
         .btn-whatsapp {
             padding: 12px 18px;
         }
+
+        .suscripcion input[type="email"] {
+            width: 90%;
+        }
     }
 
     /* ===== DARK MODE ===== */
@@ -259,6 +316,20 @@
     body.light-mode .intro h2 {
         color: #9c7945;
         background-color: #9c7945;
+    }
+
+    body.light-mode .suscripcion {
+        background-color: #fff;
+        color: #000;
+    }
+
+    body.light-mode .suscripcion input[type="email"] {
+        border: 1px solid #9c7945;
+    }
+
+    body.light-mode .suscripcion button {
+        background-color: #9c7945;
+        color: black;
     }
 </style>
 </head>
@@ -316,6 +387,20 @@
     </div>
 </section>
 
+<!-- FORMULARIO DE SUSCRIPCIÓN -->
+<section class="suscripcion">
+    <h2>Suscribite para novedades</h2>
+    <div class="linea"></div>
+    <p>Dejá tu email y sé el primero en enterarte cuando lancemos nuestros productos.</p>
+    
+    <form id="formSuscripcion">
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <button type="submit">Suscribirme</button>
+    </form>
+
+    <p id="mensaje" style="display:none; margin-top:10px;"></p>
+</section>
+
 <!-- BOTÓN WHATSAPP -->
 <a href="https://wa.me/543755341076" target="_blank" class="btn-whatsapp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
@@ -327,16 +412,30 @@
 </footer>
 
 <script>
+/* ===== DARK MODE ===== */
 const toggleBtn = document.getElementById('darkModeToggle');
 const body = document.body;
 
 toggleBtn.addEventListener('click', () => {
     body.classList.toggle('light-mode');
-    if(body.classList.contains('light-mode')){
-        toggleBtn.textContent = 'Modo Oscuro';
-    } else {
-        toggleBtn.textContent = 'Modo Claro';
-    }
+    toggleBtn.textContent = body.classList.contains('light-mode') ? 'Modo Oscuro' : 'Modo Claro';
+});
+
+/* ===== FORMULARIO DE SUSCRIPCIÓN ===== */
+const form = document.getElementById('formSuscripcion');
+const mensaje = document.getElementById('mensaje');
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const email = form.querySelector('input[type="email"]').value;
+
+    // Aquí podrías integrar con Mailchimp, Google Sheets, etc.
+    console.log("Email suscripto:", email);
+
+    mensaje.textContent = "¡Gracias por suscribirte!";
+    mensaje.style.color = "#9c7945";
+    mensaje.style.display = "block";
+    form.reset();
 });
 </script>
 
