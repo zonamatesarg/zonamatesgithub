@@ -15,6 +15,7 @@ body {
     scroll-behavior: smooth;
     transition: background-color 0.3s, color 0.3s;
 }
+
 a { text-decoration: none; color: inherit; }
 
 /* ===== HEADER ===== */
@@ -25,12 +26,14 @@ header {
     text-align: center;
     position: relative;
 }
+
 .header-contenido {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
+
 .logo { width: 90px; height: auto; }
 h1 { margin: 0; font-size: 32px; letter-spacing: 3px; }
 .subtitulo { font-size: 16px; margin-top: 10px; letter-spacing: 1px; }
@@ -138,7 +141,7 @@ footer {
 }
 
 /* ===== BOTONES FLOTANTES ===== */
-.btn-whatsapp, .btn-instagram, .btn-tiktok {
+.btn-whatsapp, .btn-instagram {
     position: fixed;
     right: 20px;
     font-weight: bold;
@@ -153,15 +156,8 @@ footer {
 }
 .btn-whatsapp { bottom: 20px; background-color: #25D366; color: white; }
 .btn-instagram { bottom: 80px; background-color: #E4405F; color: white; }
-.btn-tiktok { bottom: 140px; background-color: #000000; color: white; }
-.btn-whatsapp:hover, .btn-instagram:hover, .btn-tiktok:hover { transform: scale(1.1); }
-
-/* Logos bien proporcionados */
-.btn-whatsapp img, .btn-instagram img, .btn-tiktok img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain; /* evita deformación */
-}
+.btn-whatsapp:hover, .btn-instagram:hover { transform: scale(1.1); }
+.btn-whatsapp img, .btn-instagram img { width: 24px; height: 24px; }
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 480px){
@@ -173,11 +169,14 @@ footer {
     .catalogo { padding: 30px 10px; }
     .producto { max-width: 95%; }
     .suscripcion input[type="email"] { width: 90%; }
-    .btn-whatsapp, .btn-instagram, .btn-tiktok { padding: 12px 18px; }
+    .btn-whatsapp, .btn-instagram { padding: 12px 18px; }
 }
 
 /* ===== DARK MODE ===== */
-body.light-mode { background-color: #f5f5f5; color: #000; }
+body.light-mode {
+    background-color: #f5f5f5;
+    color: #000;
+}
 body.light-mode header, body.light-mode footer { background-color: #ffd699; color: #000; }
 body.light-mode .intro { background-color: #fff; color: #000; }
 body.light-mode .producto { background: #f0f0f0; color: #000; border: 1px solid #9c7945; }
@@ -185,6 +184,7 @@ body.light-mode .linea, body.light-mode .intro h2 { color: #9c7945; background-c
 body.light-mode .suscripcion { background-color: #fff; color: #000; }
 body.light-mode .suscripcion input[type="email"] { border: 1px solid #9c7945; }
 body.light-mode .suscripcion button { background-color: #9c7945; color: black; }
+
 </style>
 </head>
 
@@ -243,10 +243,6 @@ body.light-mode .suscripcion button { background-color: #9c7945; color: black; }
 
 <a href="https://www.instagram.com/zonamatess/" target="_blank" class="btn-instagram">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
-</a>
-
-<a href="https://www.tiktok.com/@zonamatess?is_from_webapp=1&sender_device=pc" target="_blank" class="btn-tiktok">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/TikTok_logo.svg" alt="TikTok"> TikTok
 </a>
 
 <footer>
