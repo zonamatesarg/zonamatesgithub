@@ -155,7 +155,13 @@ footer {
 .btn-instagram { bottom: 80px; background-color: #E4405F; color: white; }
 .btn-tiktok { bottom: 140px; background-color: #000000; color: white; }
 .btn-whatsapp:hover, .btn-instagram:hover, .btn-tiktok:hover { transform: scale(1.1); }
-.btn-whatsapp img, .btn-instagram img, .btn-tiktok img { width: 24px; height: 24px; }
+
+/* Logos bien proporcionados */
+.btn-whatsapp img, .btn-instagram img, .btn-tiktok img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain; /* evita deformación */
+}
 
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 480px){
@@ -240,7 +246,7 @@ body.light-mode .suscripcion button { background-color: #9c7945; color: black; }
 </a>
 
 <a href="https://www.tiktok.com/@zonamatess?is_from_webapp=1&sender_device=pc" target="_blank" class="btn-tiktok">
-    <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok"> TikTok
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/TikTok_logo.svg" alt="TikTok"> TikTok
 </a>
 
 <footer>
