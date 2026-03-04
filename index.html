@@ -60,6 +60,7 @@ h1 { margin: 0; font-size: 32px; letter-spacing: 3px; }
     background-color: #222;
     border-radius: 10px;
     display: inline-block;
+    min-width: 55px;
 }
 
 /* ===== PROMO LANZAMIENTO ===== */
@@ -161,7 +162,6 @@ body.light-mode .promo-lanzamiento {
     </div>
 </section>
 
-<!-- 🔥 PROMO AGREGADA -->
 <section class="promo-lanzamiento">
     🚀 PROMO LANZAMIENTO 🚀
     <span class="promo-destacado">REGALO SORPRESA</span>
@@ -193,12 +193,39 @@ body.light-mode .promo-lanzamiento {
 </footer>
 
 <script>
+// ===== DARK MODE =====
 const toggleBtn = document.getElementById('darkModeToggle');
 const body = document.body;
 toggleBtn.addEventListener('click', () => {
     body.classList.toggle('light-mode');
     toggleBtn.textContent = body.classList.contains('light-mode') ? 'Modo Oscuro' : 'Modo Claro';
 });
+
+// ===== CONTADOR HASTA 1 DE JULIO 2026 =====
+const fechaLanzamiento = new Date("2026-07-01T00:00:00").getTime();
+
+function actualizarContador() {
+    const ahora = new Date().getTime();
+    const distancia = fechaLanzamiento - ahora;
+
+    if (distancia <= 0) {
+        document.getElementById("timer").innerHTML = "🎉 ¡Nuestra tienda está abierta! 🎉";
+        return;
+    }
+
+    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+    document.getElementById("dias").textContent = dias.toString().padStart(2,'0');
+    document.getElementById("horas").textContent = horas.toString().padStart(2,'0');
+    document.getElementById("minutos").textContent = minutos.toString().padStart(2,'0');
+    document.getElementById("segundos").textContent = segundos.toString().padStart(2,'0');
+}
+
+setInterval(actualizarContador, 1000);
+actualizarContador();
 </script>
 
 </body>
