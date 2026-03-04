@@ -23,7 +23,6 @@ header {
     padding: 40px 20px;
     color: black;
     text-align: center;
-    position: relative;
 }
 .header-contenido {
     display: flex;
@@ -31,9 +30,10 @@ header {
     align-items: center;
     gap: 15px;
 }
-.logo { width: 90px; height: auto; }
+.logo { width: 90px; }
 h1 { margin: 0; font-size: 32px; letter-spacing: 3px; }
 .subtitulo { font-size: 16px; margin-top: 10px; letter-spacing: 1px; }
+
 #darkModeToggle {
     padding: 8px 15px;
     border-radius: 20px;
@@ -42,23 +42,7 @@ h1 { margin: 0; font-size: 32px; letter-spacing: 3px; }
     background-color: #000;
     color: #fff;
     font-weight: bold;
-    transition: 0.3s;
-    margin-top: 10px;
 }
-#darkModeToggle:hover { opacity: 0.8; }
-
-/* ===== INTRO ===== */
-.intro {
-    padding: 60px 20px;
-    background-color: #0d0d0d;
-    display: flex;
-    justify-content: center;
-    transition: background-color 0.3s, color 0.3s;
-}
-.intro-contenido { max-width: 600px; }
-.intro h2 { font-size: 24px; color: #9c7945; margin-bottom: 15px; letter-spacing: 2px; transition: color 0.3s; }
-.linea { width: 60px; height: 2px; background-color: #9c7945; margin: 15px auto 30px auto; transition: background-color 0.3s; }
-.intro p { font-size: 16px; line-height: 1.6; font-family: Georgia, serif; text-align: justify; }
 
 /* ===== CONTADOR ===== */
 .contador {
@@ -67,7 +51,6 @@ h1 { margin: 0; font-size: 32px; letter-spacing: 3px; }
     background-color: #111;
     color: #9c7945;
     font-size: 20px;
-    letter-spacing: 1px;
 }
 #timer span {
     font-weight: bold;
@@ -77,7 +60,30 @@ h1 { margin: 0; font-size: 32px; letter-spacing: 3px; }
     background-color: #222;
     border-radius: 10px;
     display: inline-block;
-    min-width: 55px;
+}
+
+/* ===== PROMO LANZAMIENTO ===== */
+.promo-lanzamiento {
+    text-align: center;
+    padding: 25px 15px;
+    background: linear-gradient(90deg, #9c7945, #ffd699);
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite alternate;
+}
+.promo-lanzamiento span {
+    display: block;
+    font-size: 24px;
+}
+.promo-destacado {
+    color: #b30000;
+    font-size: 26px;
+}
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.03); }
 }
 
 /* ===== CATÁLOGO ===== */
@@ -95,55 +101,10 @@ h1 { margin: 0; font-size: 32px; letter-spacing: 3px; }
     border-radius: 15px;
     border: 1px solid #9c7945;
     padding: 15px;
-    width: 100%;
     max-width: 220px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, color 0.3s;
 }
-.producto:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 25px rgba(156,121,69,0.5);
-}
-.producto h3 { font-size: 16px; margin: 8px 0; }
-.proximamente { color: red; font-weight: bold; font-size: 14px; letter-spacing: 1px; }
-
-/* ===== FORMULARIO DE SUSCRIPCIÓN ===== */
-.suscripcion {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #0d0d0d;
-    color: white;
-    transition: background-color 0.3s, color 0.3s;
-}
-.suscripcion h2 { font-size: 24px; color: #9c7945; margin-bottom: 15px; letter-spacing: 2px; }
-.suscripcion form {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-.suscripcion input[type="email"] {
-    padding: 12px 15px;
-    border-radius: 25px;
-    border: 1px solid #9c7945;
-    outline: none;
-    font-size: 16px;
-    width: 250px;
-    transition: 0.3s;
-}
-.suscripcion input[type="email"]:focus { border-color: #ffd699; }
-.suscripcion button {
-    padding: 12px 25px;
-    border-radius: 25px;
-    border: none;
-    background-color: #9c7945;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.suscripcion button:hover { background-color: #ffd699; }
+.proximamente { color: red; font-weight: bold; }
 
 /* ===== FOOTER ===== */
 footer {
@@ -151,8 +112,6 @@ footer {
     color: black;
     padding: 25px 15px;
     text-align: center;
-    font-size: 14px;
-    transition: background-color 0.3s, color 0.3s;
 }
 
 /* ===== BOTONES FLOTANTES ===== */
@@ -162,44 +121,22 @@ footer {
     font-weight: bold;
     padding: 14px 20px;
     border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     gap: 10px;
-    z-index: 1000;
-    transition: transform 0.2s ease;
 }
 .btn-whatsapp { bottom: 20px; background-color: #25D366; color: white; }
 .btn-instagram { bottom: 80px; background-color: #E4405F; color: white; }
-.btn-whatsapp:hover, .btn-instagram:hover { transform: scale(1.1); }
-.btn-whatsapp img, .btn-instagram img { width: 24px; height: 24px; }
-
-/* ===== MEDIA QUERIES ===== */
-@media (max-width: 480px){
-    header { padding: 30px 15px; }
-    h1 { font-size: 28px; }
-    .intro { padding: 40px 15px; }
-    .intro h2 { font-size: 20px; }
-    .intro p { font-size: 15px; line-height: 1.5; }
-    .catalogo { padding: 30px 10px; }
-    .producto { max-width: 95%; }
-    .suscripcion input[type="email"] { width: 90%; }
-    .btn-whatsapp, .btn-instagram { padding: 12px 18px; }
-}
+.btn-whatsapp img, .btn-instagram img { width: 24px; }
 
 /* ===== DARK MODE ===== */
 body.light-mode {
     background-color: #f5f5f5;
     color: #000;
 }
-body.light-mode header, body.light-mode footer { background-color: #ffd699; color: #000; }
-body.light-mode .intro { background-color: #fff; color: #000; }
-body.light-mode .producto { background: #f0f0f0; color: #000; border: 1px solid #9c7945; }
-body.light-mode .linea, body.light-mode .intro h2 { color: #9c7945; background-color: #9c7945; }
-body.light-mode .suscripcion { background-color: #fff; color: #000; }
-body.light-mode .suscripcion input[type="email"] { border: 1px solid #9c7945; }
-body.light-mode .suscripcion button { background-color: #9c7945; color: black; }
-
+body.light-mode .promo-lanzamiento {
+    background: linear-gradient(90deg, #ffd699, #9c7945);
+}
 </style>
 </head>
 
@@ -214,23 +151,6 @@ body.light-mode .suscripcion button { background-color: #9c7945; color: black; }
     </div>
 </header>
 
-<section class="intro">
-    <div class="intro-contenido">
-        <h2>Nuestra Esencia</h2>
-        <div class="linea"></div>
-        <p>
-            Bienvenidos a este emprendimiento propio que inicié en el año 2023. 
-            ZonaMates nació de una pasión simple pero profunda: el ritual del mate. 
-            Para mí, el mate no es solo una bebida, es una forma de compartir, 
-            de conectar con otros o de encontrarse con uno mismo. 
-            Es ese compañero fiel que está en cada momento. 
-            Por eso decidí crear este emprendimiento y ofrecer accesorios 
-            pensados para quienes viven el mate como una experiencia.
-        </p>
-    </div>
-</section>
-
-<!-- ===== CONTADOR ===== -->
 <section class="contador">
     <h2>¡Faltan para nuestro lanzamiento!</h2>
     <div id="timer">
@@ -239,6 +159,15 @@ body.light-mode .suscripcion button { background-color: #9c7945; color: black; }
         <span id="minutos">00</span> m 
         <span id="segundos">00</span> s
     </div>
+</section>
+
+<!-- 🔥 PROMO AGREGADA -->
+<section class="promo-lanzamiento">
+    🚀 PROMO LANZAMIENTO 🚀
+    <span class="promo-destacado">REGALO SORPRESA</span>
+    en tu compra anticipada +
+    <span>ENVÍO GRATIS en Oberá</span>
+    📲 Pedilo ahora por WhatsApp
 </section>
 
 <section class="catalogo">
@@ -251,24 +180,12 @@ body.light-mode .suscripcion button { background-color: #9c7945; color: black; }
     </div>
 </section>
 
-<section class="suscripcion">
-    <h2>Suscribite para novedades</h2>
-    <div class="linea"></div>
-    <p>Dejá tu email y sé el primero en enterarte cuando lancemos nuestros productos.</p>
-    <form id="formSuscripcion">
-        <input type="email" placeholder="Tu correo electrónico" required>
-        <button type="submit">Suscribirme</button>
-    </form>
-    <p id="mensaje" style="display:none; margin-top:10px;"></p>
-</section>
-
-<!-- BOTONES FLOTANTES -->
 <a href="https://wa.me/543755341076" target="_blank" class="btn-whatsapp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> WhatsApp
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"> WhatsApp
 </a>
 
 <a href="https://www.instagram.com/zonamatess/" target="_blank" class="btn-instagram">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> Instagram
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"> Instagram
 </a>
 
 <footer>
@@ -276,53 +193,12 @@ body.light-mode .suscripcion button { background-color: #9c7945; color: black; }
 </footer>
 
 <script>
-// ===== DARK MODE =====
 const toggleBtn = document.getElementById('darkModeToggle');
 const body = document.body;
 toggleBtn.addEventListener('click', () => {
     body.classList.toggle('light-mode');
     toggleBtn.textContent = body.classList.contains('light-mode') ? 'Modo Oscuro' : 'Modo Claro';
 });
-
-// ===== FORMULARIO DE SUSCRIPCIÓN =====
-const form = document.getElementById('formSuscripcion');
-const mensaje = document.getElementById('mensaje');
-form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const email = form.querySelector('input[type="email"]').value;
-    console.log("Email suscripto:", email);
-    mensaje.textContent = "¡Gracias por suscribirte!";
-    mensaje.style.color = "#9c7945";
-    mensaje.style.display = "block";
-    form.reset();
-});
-
-// ===== CONTADOR REGRESIVO HASTA 1 DE JULIO 2026 =====
-const fechaLanzamiento = new Date("2026-07-01T00:00:00").getTime(); 
-
-const actualizarContador = () => {
-    const ahora = new Date().getTime();
-    const distancia = fechaLanzamiento - ahora;
-
-    if (distancia <= 0) {
-        document.getElementById("timer").innerHTML = "🎉 ¡Nuestra tienda está abierta! 🎉";
-        clearInterval(intervalo);
-        return;
-    }
-
-    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-    document.getElementById("dias").textContent = dias.toString().padStart(2,'0');
-    document.getElementById("horas").textContent = horas.toString().padStart(2,'0');
-    document.getElementById("minutos").textContent = minutos.toString().padStart(2,'0');
-    document.getElementById("segundos").textContent = segundos.toString().padStart(2,'0');
-};
-
-const intervalo = setInterval(actualizarContador, 1000);
-actualizarContador();
 </script>
 
 </body>
