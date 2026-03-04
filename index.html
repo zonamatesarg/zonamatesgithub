@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZONA MATES </title>
+<title>ZONA MATES - Próximamente</title>
 
 <style>
 /* ===== ESTILOS GENERALES ===== */
@@ -15,7 +15,6 @@ body {
     scroll-behavior: smooth;
     transition: background-color 0.3s, color 0.3s;
 }
-
 a { text-decoration: none; color: inherit; }
 
 /* ===== HEADER ===== */
@@ -26,19 +25,15 @@ header {
     text-align: center;
     position: relative;
 }
-
 .header-contenido {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
-
 .logo { width: 90px; height: auto; }
 h1 { margin: 0; font-size: 32px; letter-spacing: 3px; }
 .subtitulo { font-size: 16px; margin-top: 10px; letter-spacing: 1px; }
-
-/* Dark Mode Toggle Button */
 #darkModeToggle {
     padding: 8px 15px;
     border-radius: 20px;
@@ -64,6 +59,26 @@ h1 { margin: 0; font-size: 32px; letter-spacing: 3px; }
 .intro h2 { font-size: 24px; color: #9c7945; margin-bottom: 15px; letter-spacing: 2px; transition: color 0.3s; }
 .linea { width: 60px; height: 2px; background-color: #9c7945; margin: 15px auto 30px auto; transition: background-color 0.3s; }
 .intro p { font-size: 16px; line-height: 1.6; font-family: Georgia, serif; text-align: justify; }
+
+/* ===== CONTADOR ===== */
+.contador {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111;
+    color: #9c7945;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+#timer span {
+    font-weight: bold;
+    font-size: 28px;
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #222;
+    border-radius: 10px;
+    display: inline-block;
+    min-width: 55px;
+}
 
 /* ===== CATÁLOGO ===== */
 .catalogo { padding: 40px 15px; }
@@ -215,6 +230,17 @@ body.light-mode .suscripcion button { background-color: #9c7945; color: black; }
     </div>
 </section>
 
+<!-- ===== CONTADOR ===== -->
+<section class="contador">
+    <h2>¡Faltan para nuestro lanzamiento!</h2>
+    <div id="timer">
+        <span id="dias">00</span> días 
+        <span id="horas">00</span> h 
+        <span id="minutos">00</span> m 
+        <span id="segundos">00</span> s
+    </div>
+</section>
+
 <section class="catalogo">
     <h2>Catálogo — Próximamente</h2>
     <div class="productos-container">
@@ -270,6 +296,33 @@ form.addEventListener('submit', function(e){
     mensaje.style.display = "block";
     form.reset();
 });
+
+// ===== CONTADOR REGRESIVO HASTA 1 DE JULIO 2026 =====
+const fechaLanzamiento = new Date("2026-07-01T00:00:00").getTime(); 
+
+const actualizarContador = () => {
+    const ahora = new Date().getTime();
+    const distancia = fechaLanzamiento - ahora;
+
+    if (distancia <= 0) {
+        document.getElementById("timer").innerHTML = "🎉 ¡Nuestra tienda está abierta! 🎉";
+        clearInterval(intervalo);
+        return;
+    }
+
+    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+    document.getElementById("dias").textContent = dias.toString().padStart(2,'0');
+    document.getElementById("horas").textContent = horas.toString().padStart(2,'0');
+    document.getElementById("minutos").textContent = minutos.toString().padStart(2,'0');
+    document.getElementById("segundos").textContent = segundos.toString().padStart(2,'0');
+};
+
+const intervalo = setInterval(actualizarContador, 1000);
+actualizarContador();
 </script>
 
 </body>
