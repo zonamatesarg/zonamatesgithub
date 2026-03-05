@@ -1,19 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ZONA MATES | Accesorios para Mate</title>
+<title>ZONA MATES | Accesorios que acompañan tu Mate</title>
 
-<meta name="description" content="Zona Mates - Accesorios que acompañan tu mate. Mates, bombillas, materas y más. Lanzamiento próximamente.">
+<meta name="description" content="Zona Mates - Accesorios que acompañan tu mate. Lanzamiento próximamente con mates, bombillas y accesorios.">
 <meta name="keywords" content="mate, accesorios para mate, mates argentinos, bombilla, matera, Zona Mates">
 <meta name="author" content="Zona Mates">
 
 <style>
 
-/* TODO TU CSS ORIGINAL (NO LO CAMBIÉ) */
+/* ===== ESTILOS GENERALES ===== */
+body {
+    margin: 0;
+    background-color: #000;
+    color: white;
+    font-family: "Copperplate Gothic Bold", Copperplate, serif;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ===== HEADER ===== */
+header {
+    background-color: #9c7945;
+    padding: 40px 20px;
+    color: black;
+    text-align: center;
+    position: relative;
+}
+
+.header-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+.subtitulo {
+    font-size: 16px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+#darkModeToggle {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+#darkModeToggle:hover {
+    opacity: 0.8;
+}
+
+/* ===== INTRO ===== */
+.intro {
+    padding: 60px 20px;
+    background-color: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.intro-contenido {
+    max-width: 600px;
+}
+
+.intro h2 {
+    font-size: 24px;
+    color: #9c7945;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.linea {
+    width: 60px;
+    height: 2px;
+    background-color: #9c7945;
+    margin: 15px auto 30px auto;
+    transition: background-color 0.3s;
+}
+
+.intro p {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: Georgia, serif;
+    text-align: justify;
+}
+
+/* ===== CONTADOR ===== */
+.contador {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111;
+    color: #9c7945;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+#timer span {
+    font-weight: bold;
+    font-size: 28px;
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #222;
+    border-radius: 10px;
+    display: inline-block;
+    min-width: 55px;
+}
+
+/* ===== CATÁLOGO ===== */
+.catalogo {
+    padding: 40px 15px;
+}
+
+.catalogo h2 {
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.productos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.producto {
+    background: white;
+    color: black;
+    border-radius: 15px;
+    border: 1px solid #9c7945;
+    padding: 15px;
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s, color 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(156,121,69,0.5);
+}
+
+.producto h3 {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.proximamente {
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* ===== FORMULARIO ===== */
+.suscripcion {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #0d0d0d;
+    color: white;
+}
+
+.suscripcion h2 {
+    font-size: 24px;
+    color: #9c7945;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.suscripcion form {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.suscripcion input[type="email"] {
+    padding: 12px 15px;
+    border-radius: 25px;
+    border: 1px solid #9c7945;
+    font-size: 16px;
+    width: 250px;
+}
+
+.suscripcion button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background-color: #9c7945;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #9c7945;
+    color: black;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+/* ===== BOTONES ===== */
+.btn-whatsapp, .btn-instagram {
+    position: fixed;
+    right: 20px;
+    font-weight: bold;
+    padding: 14px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-whatsapp {
+    bottom: 20px;
+    background-color: #25D366;
+    color: white;
+}
+
+.btn-instagram {
+    bottom: 80px;
+    background-color: #E4405F;
+    color: white;
+}
+
+.btn-whatsapp img,
+.btn-instagram img {
+    width: 24px;
+}
 
 </style>
 </head>
@@ -21,87 +260,73 @@
 <body>
 
 <header>
-    <div class="header-contenido">
-        <img src="logo.png" alt="Logo de Zona Mates" class="logo">
-        <h1>ZONA MATES</h1>
-        <p class="subtitulo">Accesorios que acompañan tu mate</p>
-        <button id="darkModeToggle">Modo Claro</button>
-    </div>
+<div class="header-contenido">
+<img src="logo.png" alt="Logo Zona Mates" class="logo">
+<h1>ZONA MATES</h1>
+<p class="subtitulo">Accesorios que acompañan tu mate</p>
+<button id="darkModeToggle">Modo Claro</button>
+</div>
 </header>
 
 <main>
 
 <section class="intro">
-    <div class="intro-contenido">
-        <h2>Nuestra Esencia</h2>
-        <div class="linea"></div>
-        <p>
-            Bienvenidos a este emprendimiento propio que inicié en el año 2023. 
-            ZonaMates nació de una pasión simple pero profunda: el ritual del mate. 
-            Para mí, el mate no es solo una bebida, es una forma de compartir, 
-            de conectar con otros o de encontrarse con uno mismo. 
-            Es ese compañero fiel que está en cada momento. 
-            Por eso decidí crear este emprendimiento y ofrecer accesorios 
-            pensados para quienes viven el mate como una experiencia.
-        </p>
-    </div>
+<div class="intro-contenido">
+<h2>Nuestra Esencia</h2>
+<div class="linea"></div>
+<p>
+ZonaMates nació de una pasión simple pero profunda: el ritual del mate.
+Es una forma de compartir, conectar y acompañar cada momento.
+</p>
+</div>
 </section>
 
 <section class="contador">
-    <h2>¡Faltan para nuestro lanzamiento!</h2>
-    <div id="timer">
-        <span id="dias">00</span> días
-        <span id="horas">00</span> h
-        <span id="minutos">00</span> m
-        <span id="segundos">00</span> s
-    </div>
+<h2>¡Faltan para nuestro lanzamiento!</h2>
+<div id="timer">
+<span id="dias">00</span> días
+<span id="horas">00</span> h
+<span id="minutos">00</span> m
+<span id="segundos">00</span> s
+</div>
 </section>
 
-<img src="promo-regalo.png" alt="Promoción de regalo por compra anticipada en Zona Mates"
-style="display:block; margin:25px auto; width:100%; max-width:420px; height:auto; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.4);">
+<img src="promo-regalo.png" alt="Promoción compra anticipada Zona Mates"
+style="display:block;margin:25px auto;width:100%;max-width:420px;border-radius:16px;">
 
 <section class="catalogo">
-    <h2>Catálogo — Próximamente</h2>
-    <div class="productos-container">
-        <div class="producto"><h3>Mate de Madera</h3><p class="proximamente">Próximamente</p></div>
-        <div class="producto"><h3>Bombilla Acero Inoxidable</h3><p class="proximamente">Próximamente</p></div>
-        <div class="producto"><h3>Matera Premium</h3><p class="proximamente">Próximamente</p></div>
-        <div class="producto"><h3>Yerbera y Azucarera</h3><p class="proximamente">Próximamente</p></div>
-    </div>
-</section>
+<h2>Catálogo — Próximamente</h2>
 
-<section class="suscripcion">
-    <h2>Suscribite para novedades</h2>
-    <div class="linea"></div>
-    <p>Dejá tu email y sé el primero en enterarte cuando lancemos nuestros productos.</p>
-    <form id="formSuscripcion">
-        <input type="email" placeholder="Tu correo electrónico" required>
-        <button type="submit">Suscribirme</button>
-    </form>
-    <p id="mensaje" style="display:none; margin-top:10px;"></p>
+<div class="productos-container">
+
+<div class="producto">
+<h3>Mate de Madera</h3>
+<p class="proximamente">Próximamente</p>
+</div>
+
+<div class="producto">
+<h3>Bombilla Acero Inoxidable</h3>
+<p class="proximamente">Próximamente</p>
+</div>
+
+<div class="producto">
+<h3>Matera Premium</h3>
+<p class="proximamente">Próximamente</p>
+</div>
+
+<div class="producto">
+<h3>Yerbera y Azucarera</h3>
+<p class="proximamente">Próximamente</p>
+</div>
+
+</div>
 </section>
 
 </main>
 
-<a href="https://wa.me/543755341076" target="_blank" class="btn-whatsapp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Contactar por WhatsApp">
-    WhatsApp
-</a>
-
-<a href="https://www.instagram.com/zonamatess/" target="_blank" class="btn-instagram">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Zona Mates">
-    Instagram
-</a>
-
 <footer>
-    <p>© 2026 ZONA MATES - Todos los derechos reservados</p>
+<p>© 2026 ZONA MATES</p>
 </footer>
-
-<script>
-
-/* TODO TU JAVASCRIPT ORIGINAL (NO LO CAMBIÉ) */
-
-</script>
 
 </body>
 </html>
